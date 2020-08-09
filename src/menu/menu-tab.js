@@ -18,7 +18,7 @@ export const menu_tab = (value) => {
     p0.className = 'menu-item-title'
 
     let img = document.createElement('img')
-    img.src = `../src/img/${i.img}.jpg`
+    img.src = `../dist/img/${i.img}.jpg`
     img.className = 'menu-item-img'
 
     let p = document.createElement('p')
