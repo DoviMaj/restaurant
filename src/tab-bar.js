@@ -2,7 +2,7 @@ export const tab_bar = () => {
   let logo = document.createElement('img')
   logo.id = 'logo-li'
   logo.className = 'tabs-li'
-  logo.src = '../logo.png'
+  logo.src = '../src/img/logo.png'
 
   let homeTab = document.createElement('li')
   homeTab.id = 'home'
