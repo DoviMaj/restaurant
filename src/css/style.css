@@ -1,8 +1,15 @@
 body{
-  background: url('https://whiteangelhotel.it/wp-content/uploads/2018/04/ristorante-cervinia.jpg') no-repeat center center fixed;
+  background: url('https://whiteangelhotel.it/wp-content/uploads/2018/04/ristorante-cervinia.jpg') no-repeat fixed;
   background-size: cover;
   margin: 0px;
 }  
+
+#current-content{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #nav{
   top: 46px;
   margin: 0px;
@@ -12,6 +19,7 @@ body{
   justify-content: center;
   width: 100%;
   flex-direction: column;
+  z-index: 1;
 }
 
 .tabs-li{
@@ -68,7 +76,6 @@ body{
   margin-left: auto;
   position: relative;
   margin-right: auto;
-  width: max-content;
 }
 
 #hours{
@@ -81,17 +88,16 @@ body{
     background-color: rgba(0, 0, 0, 0.3);
     padding: 10px;
     box-shadow: 0px 0px 6px 0px whitesmoke;
-    width: 400px;
 }
 
-#history-text, .contact-wrapper{
+#history-text{
   margin-top: 9.5rem;
   color: whitesmoke;
   font-family: 'Roboto Slab', serif;
   text-shadow: 5px 4px 12px rgba(0,0,0,0.3);
   background-color: rgba(0, 0, 0, 0.3);
   position: relative;
-  left: 277px;
+  left: auto;
   width: 800px;
   font-size: 1.5rem;
   padding: 15px 15px 15px 15px;
@@ -103,10 +109,8 @@ body{
   flex-wrap: wrap;
   position: relative;
   top: 143px;
-  width: 70rem;
-  height: 27rem;
-  left: 168px;
   font-family: 'Roboto Slab', serif;
+  justify-content: center;
 }
 
 .menu-item{
@@ -165,11 +169,12 @@ body{
   top: 47px;
   margin: 0px;
   padding: 0px;
-  position: absolute;
+  position: fixed;
   display: FLEX;
   width: 100%;
   flex-direction: ROW;
   justify-content: center;
+  z-index: 1;
 }
 
 
@@ -189,46 +194,55 @@ body{
     background: whitesmoke;
 }
 
-.menu-tab-li:hover, #menu-tab-li:visited, #menu-tab-li:active{ background: #a78a66; color: whitesmoke; }
+.menu-tab-li:hover, #menu-tab-li:visited, #menu-tab-li:active{ 
+  background: #a78a66; color: whitesmoke; 
+}
 
-.menu-tab-li.active{ background: #a78a66; color: whitesmoke; }
+.menu-tab-li.active{ 
+  background: #a78a66; color: whitesmoke; 
+}
 
 #contact-title{
-  position: absolute;
-  left: 33%;
-  top: -119px;
   text-align: center;
-  color: whitesmoke;
-  font-family: 'Roboto Slab', serif;
-  text-shadow: 5px 4px 12px rgba(0,0,0,0.3);
-  font-size: 3rem;
+  margin-bottom: 57px;
 }
 
 #contact-wrapper-id{
-  width: 900px;
-  height: 36rem;
+  margin-top: 9.5rem;
+  color: whitesmoke;
+  font-family: 'Roboto Slab', serif;
+  text-shadow: 5px 4px 12px rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+  position: relative;
+  left: auto;
+  width: 800px;
+  font-size: 1.5rem;
+  padding: 15px 15px 15px 15px;
+  box-shadow: 0px 0px 6px 0px whitesmoke;
+  display: flex;
+  flex-flow: column;
+  position: initial;
+  font-size: 1.5rem;
+  padding: 0;
+  width: initial;
+  align-items: center;
 }
 
 #adress-icon{
-  padding: 20px;
-  width: 30px;
-  left: -15px;
-  top: -16px;
-  position: relative;
+    width: 30px;
+    top: -32px;
+    position: relative;
 }
 
 #adress-id{
+  margin: 0;
   position: relative;
-  top: 86px;
-  left: 60px;
-  width: 255px;
+  align-self: center;
 }
 
 iframe{  
-  position: absolute;
-  left: 297px;
-  top: 57px;
-}
+  width: initial;
+} 
 
 #phone-id{
   position: relative;
@@ -250,17 +264,10 @@ iframe{
 #phone-div, #adress-div{
   display: flex;
   flex-direction: column-reverse;
+  width: 350px;
+  align-self: center;
 }
 
-#phone-div{
-  top: -71px;
-    position: relative;
-}
-
-#adress-div{
-  position: relative;
-  top: -63px;
-}
 
 #form{
   display: inline-grid;
@@ -273,9 +280,7 @@ iframe{
 }
 
 #form-div{
-  position: relative;
-  top: -70px;
-  left: 25px
+  align-self: center;
 }
 
 .form-item{
@@ -289,8 +294,16 @@ iframe{
 
 @media screen and (max-width: 430px) {
   #welcome{
-    width: 427px;
     margin: auto;
+  }
+  #menu-content{
+    display: block;
+    position: relative;
+    top: 143px;
+    width: auto;
+    left: 0;
+    text-align: -webkit-center;
+    padding: 0;
   }
 }
 
@@ -299,26 +312,27 @@ iframe{
   #logo-li{
     display: none
   }
-  #welcome{
-    width: 400px;
-  }
 }
 
+
 @media screen and (max-width: 880px) {
-  #nav{
-      top: 0;
-      height: 53px;
-      flex-direction: row;
-  }
   #menu-nav{
     top: 53px;
   }
-  #logo-li{
-    margin-top: 13px;
-    margin-left: -139px;
-    height: 134px;
+  #history-text{
+    width: fit-content;
   }
 }
 
-
-
+@media screen and (max-width: 1018px){
+  #nav{
+    top: 0;
+    height: 53px;
+    flex-direction: row;
+  }
+  #logo-li {
+    margin-top: 13px;
+    margin-left: -139px;
+    height: 134px;
+}
+}
